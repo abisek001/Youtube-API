@@ -2,11 +2,13 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
+import userRouter from "./Router/user.js";
+
 const app = express();
 dotenv.config();
 const port = process.env.PORT;
 const hostname = process.env.HOST;
-
+app.use('/user', userRouter)
 
 const Atlas_Url = process.env.DBURL;
 
