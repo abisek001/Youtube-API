@@ -1,10 +1,14 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors";
+import bodyParser from "body-parser";
 
 import userRouter from "./Router/user.js";
 
 const app = express();
+app.use(cors());
+app.use(bodyParser.json())
 dotenv.config();
 const port = process.env.PORT;
 const hostname = process.env.HOST;
