@@ -5,11 +5,11 @@ import cors from "cors";
 import bodyParser from "body-parser";
 
 import userRouter from "./Router/user.js";
+dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json())
-dotenv.config();
 const port = process.env.PORT;
 const hostname = process.env.HOST;
 app.use('/user', userRouter)
